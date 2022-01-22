@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    {% for mascota in mascotas %}
+        <div class="petname">
+
+            <a href="{% url 'mascota_detalle' mascota.id %}">
+            <h3>{{mascota.nombre|capfirst}}</h3>
+            </a>
+
+            <p>{{mascota.especie}}</p>
+            {% if mascota.raza %}
+                <p>Raza: {{mascota.raza}}</p>
+            {% endif %}
+            <p class="hidden">{{mascota.detalle}}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

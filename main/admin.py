@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Mascota
+
+
+@admin.register(Mascota)
+class MascotaAdmin(admin.ModelAdmin):
+    
+    list_display =['nombre','especie','raza','edad','sexo']
+
